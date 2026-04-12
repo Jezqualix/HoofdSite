@@ -1,0 +1,56 @@
+[
+  {
+    "id": "peterallesweter",
+    "naam": "PeterAllesweter",
+    "beschrijving": "AI-gestuurde assistent voor het beantwoorden van vragen over garages, diensten en klanten.",
+    "status": "online",
+    "type": "demo",
+    "url": "http://homeweb.draco.be:3001",
+    "icon": "🤖"
+  },
+  {
+    "id": "wachtdiensten",
+    "naam": "Wachtdiensten App",
+    "beschrijving": "Beheer en planning van wachtdiensten voor medewerkers en locaties.",
+    "status": "online",
+    "type": "demo",
+    "url": "http://homeweb.draco.be:3002",
+    "icon": "📅"
+  },
+  {
+    "id": "aisandbox",
+    "naam": "AI Sandbox",
+    "beschrijving": "Experimentele omgeving voor het testen van AI-modellen en integraties.",
+    "status": "in-opbouw",
+    "type": "acceptatie",
+    "url": "#",
+    "icon": "💁"
+  },
+  {
+    "id": "teruggaveformulier",
+    "naam": "Teruggave Formulier",
+    "beschrijving": "Kosten gemaakt? Vraag ze hier terug!",
+    "status": "online",
+    "type": "demo",
+    "url": "http://homeweb.draco.be:3004",
+    "icon": "🔍"
+  },
+  {
+    "id": "tradingviewer",
+    "naam": "TradeBot Portaal",
+    "beschrijving": "TradingView research application for stocks and crypto.",
+    "status": "in-opbouw",
+    "type": "test",
+    "url": "http://homeweb.draco.be:3003",
+    "icon": "💰"
+  },
+  {
+    "id": "proxmox",
+    "naam": "Proxmox",
+    "beschrijving": "Internal use only!",
+    "status": "online",
+    "type": "test",
+    "url": "http://192.168.55.70:8006",
+    "icon": "📛️"
+  }
+]

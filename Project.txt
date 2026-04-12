@@ -1,0 +1,59 @@
+Maak een interne portaalsite in dezelfde tech stack als onze bestaande applicaties, namelijk Node.js, zodat alles qua structuur, deployment en onderhoud gelijk blijft met onze andere projecten zoals Wachtdiensten en PeterAllesweter.
+
+Doel:
+Ik wil een hoofdsite maken waarop op een eenvoudige, leuke en overzichtelijke manier te zien is welke applicaties op deze server draaien. Het gaat om testomgevingen.
+
+Technische vereisten:
+- Gebruik Node.js als basis.
+- Gebruik bij voorkeur Express als webserver.
+- Hou de code en projectstructuur eenvoudig en onderhoudbaar.
+- Voorzie een duidelijke mapstructuur.
+- Gebruik een configuratiebestand of JSON-array waarin de applicaties staan opgelijst.
+- De site moet makkelijk uitbreidbaar zijn met nieuwe apps.
+- Zorg dat de site geschikt is om achter Nginx als reverse proxy te draaien.
+- Geen complexe databank nodig in versie 1.
+- Alles mag lokaal uit configuratie geladen worden.
+- In de toekomst zal er nood zijn aan Active Directory authenticatie maar is in versie 1 niet nodig.
+- Gebruik Context7 voor de nieuwste tech
+
+
+Functionele vereisten:
+- Toon alle testapplicaties als kaarten/tegels op de homepagina.
+- Elke kaart moet bevatten:
+  - naam van de applicatie
+  - korte beschrijving
+  - status: Online / Onderhoud / Offline / In opbouw
+  - type omgeving: Test / Acceptatie / Demo
+  - linkknop om de applicatie te openen
+- Voorzie een zoekfunctie.
+- Voorzie filters op status.
+- Voorzie een leuke maar professionele uitstraling.
+- Responsive design voor desktop en mobiel.
+- Voorzie eventueel dark mode.
+- Maak het visueel aantrekkelijk maar niet te druk.
+
+Voorbeeldapplicaties:
+- PeterAllesweter: zal bereikbaar zijn op http://homeweb.draco.be:3001
+- Wachtdiensten App: zal bereikbaar zijn op http://homeweb.draco.be:3002
+- Rapportering Test
+- Planning Portaal
+- AI Sandbox
+
+Design:
+- Interne portal / app-launcher stijl
+- Modern, luchtig, vriendelijk en professioneel
+- Gericht op snelle toegang tot testomgevingen
+- Duidelijke statusbadges met kleuren
+- Grote klikbare kaarten
+- Eventueel subtiele dev/server sfeer
+- Kleuren die gebruikt kunnen worden kan je hier vinden C:\DEVELOPMENT\PeterAllesweter en C:\DEVELOPMENT\Wachtdiensten
+
+Oplevering:
+- Geef de volledige projectstructuur.
+- Geef alle bestanden volledig, niet gedeeltelijk.
+- Voeg duidelijke instructies toe om het project te starten met npm install en npm start.
+- Voeg voorbeelddata toe.
+- Voorzie ook een voorbeeld van een eenvoudige Nginx reverse proxy configuratie.
+
+Belangrijk:
+Hou alles consistent met een typische Node.js-applicatie zodat dit project qua stijl en deployment past naast onze bestaande applicaties.

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="nl" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HoofdSite — Testomgevingen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <span class="header-logo">⚡</span>
+        <div>
+          <div class="header-title">HoofdSite</div>
+          <div class="header-subtitle">Testomgevingen overzicht</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" title="Wissel dark/light mode" aria-label="Wissel thema">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- PoC Banner -->
+    <section class="poc-banner">
+      <div class="poc-content">
+        <span class="poc-icon">⚗️</span>
+        <div class="poc-text">
+          <h2 class="poc-title">Proof of Concept Zone</h2>
+          <p class="poc-subtitle">Deze applicaties zijn experimentele PoCs met testdata en testcases — niets hiervan is productie-klaar</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1 class="hero-title">Welkom op de testserver</h1>
+      <p class="hero-description">
+        Hier vind je een overzicht van alle applicaties die op deze server draaien.
+        Klik op een kaart om de applicatie te openen.
+      </p>
+
+      <!-- Stats -->
+      <div class="stats-bar">
+        <div class="stat">
+          <span class="stat-number" id="statTotal"><%= apps.length %></span>
+          <span class="stat-label">Applicaties</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number stat-online" id="statOnline"><%= apps.filter(a => a.status === 'online').length %></span>
+          <span class="stat-label">Online</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number stat-muted" id="statOther"><%= apps.filter(a => a.status !== 'online').length %></span>
+          <span class="stat-label">Overige</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controls -->
+    <section class="controls">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Zoek een applicatie..."
+          autocomplete="off"
+        />
+      </div>
+      <div class="filter-wrap">
+        <button class="filter-btn active" data-filter="alle">Alle</button>
+        <button class="filter-btn" data-filter="online">Online</button>
+        <button class="filter-btn" data-filter="onderhoud">Onderhoud</button>
+        <button class="filter-btn" data-filter="offline">Offline</button>
+        <button class="filter-btn" data-filter="in-opbouw">In opbouw</button>
+      </div>
+    </section>
+
+    <!-- App Grid -->
+    <section class="app-grid" id="appGrid">
+      <% apps.forEach(function(app) { %>
+      <article
+        class="app-card"
+        data-status="<%= app.status %>"
+        data-naam="<%= app.naam.toLowerCase() %>"
+        data-beschrijving="<%= app.beschrijving.toLowerCase() %>"
+      >
+        <div class="card-header">
+          <span class="card-icon"><%= app.icon %></span>
+          <div class="card-badges">
+            <span class="badge badge-status badge-<%= app.status %>">
+              <%= app.status === 'online' ? 'Online'
+                : app.status === 'onderhoud' ? 'Onderhoud'
+                : app.status === 'offline' ? 'Offline'
+                : 'In opbouw' %>
+            </span>
+            <span class="badge badge-type badge-<%= app.type %>">
+              <%= app.type === 'test' ? 'Test'
+                : app.type === 'acceptatie' ? 'Acceptatie'
+                : 'Demo' %>
+            </span>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <h2 class="card-title"><%= app.naam %></h2>
+          <p class="card-description"><%= app.beschrijving %></p>
+        </div>
+
+        <div class="card-footer">
+          <% if (app.status === 'online' && app.url !== '#') { %>
+          <a href="<%= app.url %>" target="_blank" rel="noopener" class="btn-open" data-app-id="<%= app.id %>" data-app-name="<%= app.naam %>">
+            Openen <span class="btn-arrow">→</span>
+          </a>
+          <% } else { %>
+          <button class="btn-open btn-disabled" disabled>
+            <%= app.status === 'onderhoud' ? 'In onderhoud' : app.status === 'offline' ? 'Offline' : 'Binnenkort' %>
+          </button>
+          <% } %>
+        </div>
+      </article>
+      <% }); %>
+    </section>
+
+    <!-- Empty state -->
+    <div class="empty-state hidden" id="emptyState">
+      <span class="empty-icon">🔎</span>
+      <p>Geen applicaties gevonden voor deze zoekopdracht.</p>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>HoofdSite &mdash; Interne testomgeving &mdash; <span id="currentYear"></span></p>
+    <p class="footer-visitor">Welkom bezoeker! Je IP-adres: <code><%= clientIP %></code></p>
+  </footer>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
