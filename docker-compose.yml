@@ -1,0 +1,12 @@
+services:
+  hoofdsite:
+    build: .
+    container_name: hoofdsite
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./logs:/app/logs
+      - ./config/apps.json:/app/config/apps.json
+    environment:
+      - PORT=3000

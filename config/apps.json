@@ -18,13 +18,13 @@
     "icon": "📅"
   },
   {
-    "id": "aisandbox",
-    "naam": "AI Sandbox",
-    "beschrijving": "Experimentele omgeving voor het testen van AI-modellen en integraties.",
-    "status": "in-opbouw",
-    "type": "acceptatie",
-    "url": "#",
-    "icon": "💁"
+    "id": "dockxgroup",
+    "naam": "Dockx Group v2026",
+    "beschrijving": "Google Antigravity project om de Dockx Group website in een nieuw jasje te gieten.",
+    "status": "online",
+    "type": "demo",
+    "url": "http://homeweb.draco.be:3050",
+    "icon": "🚗"
   },
   {
     "id": "teruggaveformulier",
@@ -46,11 +46,11 @@
   },
   {
     "id": "proxmox",
-    "naam": "Proxmox",
+    "naam": "📛️ Proxmox 📛️",
     "beschrijving": "Internal use only!",
     "status": "online",
     "type": "test",
-    "url": "http://192.168.55.70:8006",
+    "url": "http://proxmox.internal.draco.be:8006",
     "icon": "📛️"
   }
 ]
