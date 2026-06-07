@@ -6,7 +6,15 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./logs:/app/logs
-      - ./config/apps.json:/app/config/apps.json
+      - /docker/logs/hoofdsite/:/app/logs
+      - /docker/docker_config/apps.json:/app/config/apps.json
     environment:
       - PORT=3000
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.hoofdsite.rule=Host(`hoofdsite.homeweb.draco.be`)"
+      - "traefik.http.routers.hoofdsite.entrypoints=web"
+      - "traefik.http.routers.hoofdsite.tls=false"
+      - "traefik.http.routers.hoofdsite.tls.certresolver=myresolver"
+      - "traefik.http.services.hoofdsite.loadbalancer.server.port=3000"
+      - "traefik.docker.network=dockernet"
