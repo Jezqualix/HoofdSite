@@ -6,7 +6,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - /docker/logs/hoofdsite/:/app/logs
+      #- /docker/logs/hoofdsite/:/app/logs
       #- /docker/docker_config/apps.json:/app/config/apps.json
     environment:
       - PORT=3000
@@ -18,3 +18,9 @@ services:
       - "traefik.http.routers.hoofdsite.tls.certresolver=myresolver"
       - "traefik.http.services.hoofdsite.loadbalancer.server.port=3000"
       - "traefik.docker.network=dockernet"
+    networks:
+      - dockernet
+
+networks:
+  dockernet:
+    external: true
