@@ -7,7 +7,7 @@ services:
       - "3000:3000"
     volumes:
       - /docker/logs/hoofdsite/:/app/logs
-      - /docker/docker_config/apps.json:/app/config/apps.json
+      #- /docker/docker_config/apps.json:/app/config/apps.json
     environment:
       - PORT=3000
     labels:
